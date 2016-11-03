@@ -39,6 +39,7 @@ Module.symvers
 # Binary File
 a.out
 demo
+main
 
 # Directory
 /build
@@ -74,5 +75,6 @@ ID
 *~
 \#*#
 
-
+# useless files
+tags
 
