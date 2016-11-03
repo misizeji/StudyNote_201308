@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>0.png</file>
+        <file>1.png</file>
+        <file>max1.png</file>
+        <file>max2.png</file>
+        <file>min1.png</file>
+        <file>min2.png</file>
+        <file>quit1.png</file>
+        <file>quit2.png</file>
+        <file>tomax1.png</file>
+        <file>tomax2.png</file>
+    </qresource>
+</RCC>

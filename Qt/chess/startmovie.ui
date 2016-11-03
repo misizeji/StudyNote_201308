@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StartMovie</class>
+ <widget class="QWidget" name="StartMovie">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>黑白棋</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="backgouand.qrc">
+    <normaloff>:/new/prefix1/1.png</normaloff>:/new/prefix1/1.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+  </layout>
+ </widget>
+ <resources>
+  <include location="backgouand.qrc"/>
+ </resources>
+ <connections/>
+</ui>
