@@ -1,0 +1,23 @@
+#! /bin/sh
+
+/bin/mount -a
+
+/bin/mkdir  -p   /dev/pts
+/bin/mkdir  -p   /dev/shm
+/bin/mount  -t   devpts  devpts   /dev/pts    
+/bin/mount  -t   tmpfs  tmpfs    /dev/shm
+
+/bin/mkdir  /var/tmp
+/bin/mkdir  /var/modules
+/bin/mkdir  /var/run
+/bin/mkdir  /var/log
+
+if ! [ -d  /lib/modules ]; then    
+	mkdir  /lib/modules
+fi
+
+if ! [ -d  /lib/modules/$(uname -r) ]; then     
+	mkdir  /lib/modules/$(uname -r)
+fi
+
+/sbin/mdev  -s

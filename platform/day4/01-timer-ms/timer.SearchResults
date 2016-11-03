@@ -1,0 +1,4 @@
+---- get_PCLKD Æ¥Åä (3 in 2 ÎÄ¼þ) ----
+Speed.c (drivers\timer):ulong get_PCLKD(void)
+Speed.c (drivers\timer):			get_HCLKD()/1000000, get_PCLKD()/1000000);
+Speed.h (include):ulong get_PCLKD(void);
