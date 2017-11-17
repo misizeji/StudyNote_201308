@@ -1,0 +1,52 @@
+TARGET = main
+BIN_NAME = main
+
+HDR_DIR = ./include
+SRC_DIR = ./src
+OBJ_DIR = ./obj
+BIN_DIR = ./bin
+
+CXX = g++
+CXXFLAGS = -g -Wall
+
+HDRS = $(wildcard $(HDR_DIR)/*.h)
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+OBJS = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(notdir $(SRCS)))
+DEPS = $(patsubst %.o, %.d, $(OBJS))
+
+.PHONY: all
+all: dir $(TARGET)
+
+$(TARGET): $(BIN_DIR)/$(BIN_NAME)
+    -ln -s $(BIN_DIR)/$(BIN_NAME) $(TARGET)
+
+$(BIN_DIR)/$(BIN_NAME): $(OBJS)
+    $(CXX) $(CXXFLAGS) $^ -o $@
+
+-include $(DEPS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+    $(CXX) $(CXXFLAGS) -I $(HDR_DIR) -c -MMD $< -o $@
+
+.PHONY: dir
+dir:
+    -mkdir $(OBJ_DIR)
+    -mkdir $(BIN_DIR)
+
+.PHONY: print
+print:
+    @echo HDRS = $(HDRS)
+    @echo SRCS = $(SRCS)
+    @echo OBJS = $(OBJS)
+    @echo DEPS = $(DEPS)
+
+.PHONY: clean
+clean:
+    -rm -r $(OBJ_DIR)
+    -rm -r $(BIN_DIR)
+    -rm $(TARGET)
+
+作者：kophy1
+链接：http://www.jianshu.com/p/523726ef5c3b
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
